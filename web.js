@@ -6,7 +6,7 @@ var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
 //  response.send('back to test');
-    response.send(fs.readFileSync('index.htm', function (err, data).toString())
+    response.send(fs.readFileSync('index.htm')).toString()
 // {
 //      if (err) throw err;
 //      console.log(data);
