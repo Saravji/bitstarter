@@ -3,14 +3,15 @@ var express = require('express');
 var answer;
 var app = express.createServer(express.logger());
 
-fs.readFileSync('index.htm', function (err, data) {
-  if (err) throw err;
-  answer = data;
-//  console.log(data);
-}):
 
 app.get('/', function(request, response) {
   response.send('back to test');
+    fs.readFileSync('index.htm', function (err, data) {
+      if (err) throw err;
+      //answer = data;
+      console.log(data);
+    }):
+
 });
 
 var port = process.env.PORT || 5000;
