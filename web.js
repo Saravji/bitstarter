@@ -5,10 +5,11 @@ var app = express.createServer(express.logger());
 
 
 app.get('/', function(request, response) {
-  response.send('back to test');
+//  response.send('back to test');
     fs.readFileSync('index.htm', function (err, data) {
       if (err) throw err;
       console.log(data);
+      response.send(data);
     });
 
 });
