@@ -10,7 +10,7 @@ fs.readFileSync('index.html', function (err, data) {
 }):
 
 app.get('/', function(request, response) {
-  response.send(answer);
+  response.send('back to test');
 });
 
 var port = process.env.PORT || 5000;
