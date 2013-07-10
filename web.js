@@ -5,17 +5,7 @@ var app = express.createServer(express.logger());
 
 
 app.get('/', function(request, response) {
-//  response.send('back to test');
-    response.send(fs.readFileSync('index.htm')).toString()
-// {
-//      if (err) throw err;
-//      console.log(data);
-//      var buffer = new Buffer ();
-//        response.send(buffer.toString(
-//      answer = 
-//      response.send(answer);
- //   });
-
+    response.send(fs.readFileSync('index.html')).toString()
 });
 
 var port = process.env.PORT || 5000;
