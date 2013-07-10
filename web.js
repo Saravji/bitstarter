@@ -8,9 +8,8 @@ app.get('/', function(request, response) {
   response.send('back to test');
     fs.readFileSync('index.htm', function (err, data) {
       if (err) throw err;
-      //answer = data;
       console.log(data);
-    }):
+    });
 
 });
 
