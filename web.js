@@ -6,11 +6,15 @@ var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
 //  response.send('back to test');
-    fs.readFileSync('index.htm', function (err, data) {
-      if (err) throw err;
-      console.log(data);
-      response.send(data);
-    });
+    response.send(fs.readFileSync('index.htm', function (err, data).toString())
+// {
+//      if (err) throw err;
+//      console.log(data);
+//      var buffer = new Buffer ();
+//        response.send(buffer.toString(
+//      answer = 
+//      response.send(answer);
+ //   });
 
 });
 
