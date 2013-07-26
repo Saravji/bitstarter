@@ -6,6 +6,7 @@ var htmlfile = 'index.html';
 
 
 app.get('/', function(request, response) {
+	System.err.out (request);
     answer = fs.readFileSync(htmlfile).toString();
     response.send(answer);
 });
