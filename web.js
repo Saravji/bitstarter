@@ -2,11 +2,11 @@ var fs = require('fs');
 var express = require('express');
 var answer;
 var app = express.createServer(express.logger());
-var htmlfile = 'index.html';
-
 
 app.get('/', function(request, response) {
-	console.log(request);
+	var htmlfile ='index.html';
+	
+	console.log(request.path);
     answer = fs.readFileSync(htmlfile).toString();
     response.send(answer);
 });
