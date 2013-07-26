@@ -5,9 +5,9 @@ var answer;
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
-	var htmlfile ='index.html';
-	
-	console.log(url.parse(request.url).pathname);
+	var htmlfile = 'index.html';
+	var pathname = url.parse(request.url).pathname;
+	console.log("Request for " + pathname + " received.");
     answer = fs.readFileSync(htmlfile).toString();
     response.send(answer);
 });
