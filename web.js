@@ -9,7 +9,7 @@ function startIt (request, response) {
 		var pathname = url.parse(request.url).pathname;
 		console.log("Request for " + pathname + " received.");
 	
-	app.get('/', function server (request, response) {
+	app.get('/', function(request, response) {
 		answer = fs.readFileSync(htmlfile).toString();
 		response.send(answer);
 	});
