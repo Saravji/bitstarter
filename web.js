@@ -12,15 +12,15 @@ app.get('/', function(request, response) {
 
 app.get(/^(.+)$/, function(request, response) {
 	htmlfile = request.url.substring(1);
-	var head={'Content-Type':'text/html'}
+	var head={'text/html'}
 	console.log(request.url.slice(-3));
 	switch(request.url.slice(-3)){
-		case '.js':head={'Content-Type':'text/javascript'};break;
-		case 'css':head={'Content-Type':'text/css'};break;
-		case 'png':head={'Content-Type':'image/png'};break;
-		case 'ico':head={'Content-Type':'image/x-icon'};break;
-		case 'ogg':head={'Content-Type':'audio/ogg'};break;
-		case 'ebm':head={'Content-Type':'video/webm'};break;
+		case '.js':head={'text/javascript'};break;
+		case 'css':head={'text/css'};break;
+		case 'png':head={'image/png'};break;
+		case 'ico':head={'image/x-icon'};break;
+		case 'ogg':head={'audio/ogg'};break;
+		case 'ebm':head={'video/webm'};break;
 	}
 	response.contentType(head);
 	answer = fs.readFileSync(htmlfile).toString();
