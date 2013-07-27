@@ -10,7 +10,7 @@ app.use(function(request, respond, next){
 	next();
 	});
 
-app.get(function(request, response) {
+app.get(htmlfile, function(request, response) {
 	answer = fs.readFileSync(htmlfile).toString();
 	response.send(answer);
 });
