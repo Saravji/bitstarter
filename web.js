@@ -11,7 +11,7 @@ app.get('/', function(request, response) {
 });
 
 app.get(/^(.+)$/, function(request, response) {
-	htmlfile = request.params[0];
+	htmlfile = request.url.substring(1);
 	console.log("File: " + htmlfile);
 	answer = fs.readFileSync(htmlfile).toString();
 	response.send(answer);
