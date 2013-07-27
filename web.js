@@ -2,17 +2,16 @@ var fs = require('fs');
 var express = require('express');
 var answer;
 var app = express.createServer(express.logger());
-var htmlfile = 'index.html';
+var htmlfile;
 
 app.get('/', function(request, response) {
-	console.log("File: " + htmlfile);
+	htmlfile = 'index.html';
 	answer = fs.readFileSync(htmlfile).toString();
 	response.send(answer);
 });
 
 app.get(/^(.+)$/, function(request, response) {
 	htmlfile = request.url.substring(1);
-	console.log("File: " + htmlfile);
 	answer = fs.readFileSync(htmlfile).toString();
 	response.send(answer);
 });
