@@ -5,7 +5,7 @@ var app = express.createServer(express.logger());
 var htmlfile = 'index.html';
 
 app.use(function(request, respond, next){
-	if (!request.url = '/') {htmlfile = request.url;}
+	if (request.url != '/') {htmlfile = request.url;}
 	console.log("Request: " + request.url);
 	next();
 	});
