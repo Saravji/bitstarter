@@ -1,23 +1,31 @@
 var fs = require('fs');
 var express = require('express');
-var url = require('url');
 var answer;
 var app = express.createServer(express.logger());
+var htmlfile;
 
-function startIt (request, response) {
-		var htmlfile = 'index.html';
-		var pathname = url.parse(request.url).pathname;
-		console.log("Request for " + pathname + " received.");
-	
-	app.get('/', function(request, response) {
+app.get('/', function(request, response) {
+		htmlfile  = 'index.html';
 		answer = fs.readFileSync(htmlfile).toString();
 		response.send(answer);
 	});
-}	
 
+app.get('/20130721.html', function(request, response) {
+		htmlfile  = '20130721.html';
+		answer = fs.readFileSync(htmlfile).toString();
+		response.send(answer);
+	});
 
+app.get('/20130714.html', function(request, response) {
+		htmlfile  = '20130714.html';
+		answer = fs.readFileSync(htmlfile).toString();
+		response.send(answer);
+	});
+
+	
+	
 var port = process.env.PORT || 8080;
-app.listen(port, function startIt() {
+app.listen(port, function() {
   console.log("Listening on " + port);
 });
 
