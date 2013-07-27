@@ -4,8 +4,11 @@ var answer;
 var app = express.createServer(express.logger());
 var htmlfile;
 
+app.set
+
 app.get('/', function(request, response) {
 		htmlfile  = 'index.html';
+		console.log("Request: " + request.url);
 		answer = fs.readFileSync(htmlfile).toString();
 		response.send(answer);
 	});
