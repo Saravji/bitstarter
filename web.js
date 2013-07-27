@@ -15,6 +15,7 @@ app.get('/', function(request, response) {
 
 app.get('/20130721.html', function(request, response) {
 		htmlfile  = '20130721.html';
+		console.log("Request: " + request.url);
 		answer = fs.readFileSync(htmlfile).toString();
 		response.send(answer);
 	});
