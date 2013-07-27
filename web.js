@@ -13,6 +13,8 @@ function startIt (request, response) {
 		answer = fs.readFileSync(htmlfile).toString();
 		response.send(answer);
 	});
+}	
+
 
 var port = process.env.PORT || 8080;
 app.listen(port, function startIt() {
