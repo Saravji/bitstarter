@@ -13,6 +13,7 @@ app.get('/', function(request, response) {
 app.get(/^(.+)$/, function(request, response) {
 	htmlfile = request.url.substring(1);
 	var head={'Content-Type':'text/html'}
+	consloe.log(request.url.slice(-3));
 	switch(request.url.slice(-3)){
 		case '.js':head={'Content-Type':'text/javascript'};break;
 		case 'css':head={'Content-Type':'text/css'};break;
