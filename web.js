@@ -6,7 +6,7 @@ var htmlfile = 'index.html';
 
 app.set
 
-app.get(request.url, function(request, response) {
+app.get(function(request, response) {
 		htmlfile = request.url;
 		console.log("Request: " + request.url);
 		answer = fs.readFileSync(htmlfile).toString();
