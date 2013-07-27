@@ -2,12 +2,12 @@ var fs = require('fs');
 var express = require('express');
 var answer;
 var app = express.createServer(express.logger());
-var htmlfile;
+var htmlfile = 'index.html';
 
 app.set
 
-app.get('/', function(request, response) {
-		htmlfile  = 'index.html';
+app.get(request.url, function(request, response) {
+		htmlfile = request.url;
 		console.log("Request: " + request.url);
 		answer = fs.readFileSync(htmlfile).toString();
 		response.send(answer);
