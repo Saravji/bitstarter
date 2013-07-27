@@ -10,7 +10,7 @@ app.get('/', function(request, response) {
 	response.send(answer);
 });
 
-app.get(/^(.+)$/, function(request, response) {
+app.get(/^(.+)$/, function(request, res) {
 	htmlfile = request.url.substring(1);
 	var head={'Content-Type':'text/html; charset=UTF-8'}
 	console.log(request.url.slice(-3));
@@ -22,9 +22,9 @@ app.get(/^(.+)$/, function(request, response) {
 		case 'ogg':head={'Content-Type':'audio/ogg'};break;
 		case 'ebm':head={'Content-Type':'video/webm'};break;
 	}
-	response.writeHead(200,head);
+	res.writeHead(200,head);
 	answer = fs.readFileSync(htmlfile).toString();
-	response.end(answer);
+	res.end(answer);
 });
 
 var port = process.env.PORT || 8080;
