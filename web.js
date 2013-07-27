@@ -23,6 +23,7 @@ app.get(/^(.+)$/, function(request, response) {
 		case 'ebm':head='video/webm';break;
 	}
 	response.contentType(head);
+	response.charset = 'utf-8';
 	answer = fs.readFileSync(htmlfile).toString();
 	response.end(answer);
 });
