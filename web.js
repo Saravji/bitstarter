@@ -24,7 +24,7 @@ app.get(/^(.+)$/, function(request, response) {
 	}
 	response.writeHead(200,head);
 	answer = fs.readFileSync(htmlfile).toString();
-	response.send(answer);
+	response.end(answer);
 });
 
 var port = process.env.PORT || 8080;
