@@ -47,20 +47,6 @@
 			document.getElementById("barWarning").style.width = barWarning + "%";
 		};
 	
-		!function(d,s,id){
-			var js,fjs=d.getElementsByTagName(s)[0];
-			
-			if(!d.getElementById(id)){
-				js=d.createElement(s);
-				js.id=id;
-				if (id = "twitter-link") { js.src="http://platform.twitter.com/widgets.js"; };
-				if (id = "fb-link") { js.src = "http://connect.facebook.net/en_US/all.js#xfbml=1"; };
-				fjs.parentNode.insertBefore(js,fjs);
-			}
-		}
-		(document,"script","twitter-wjs");
-		(document, 'script', 'facebook-jssdk');
-	
 	</script>
 	
 	<style type="text/css">
@@ -174,6 +160,11 @@
 			color: #ccccff;
 		}
 
+		div.addthis_toolbox {
+			width:180px;
+			margin: 0 auto;
+		}
+
 	</style>
 </head>
 <body>
@@ -251,7 +242,7 @@
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner">
 				<div class="item active">
-					<img src="carousel01.png" alt="">
+					<img src="carousel01.gif" alt="">
 					
 					<div class="carousel-caption">
 						<h4>As many as 5% of infants less than 3 years have diagnosed food allergies</h4>
@@ -259,70 +250,70 @@
 					</div>
 				</div>
 				<div class="item">
-					<img src="carousel02.png" alt="">
+					<img src="carousel02.gif" alt="">
 					<div class="carousel-caption">
 						<h4>As many as 3% - 4% of adults have diagnosed food allergies</h4>
 						<p>source: en.wikipedia.org/wiki/Food_allergy</p>
 					</div>
 				</div>
 				<div class="item">
-					<img src="carousel03.png" alt="">
+					<img src="carousel03.gif" alt="">
 					<div class="carousel-caption">
 						<h4>More than 20% of adults think they have food allergies</h4>
 						<p>source: www.foodallergens.info/Facts/How_Many.html</p>
 					</div>
 				</div>
 				<div class="item">
-					<img src="carousel04.png" alt="">
+					<img src="carousel04.gif" alt="">
 					<div class="carousel-caption">
 						<h4>Population US and Canada: approx. 349 M</h4>
 						<p>4% equals 13,960,000 people</p>
 					</div>
 				</div>
 				<div class="item">
-					<img src="carousel05.png" alt="">
+					<img src="carousel05.gif" alt="">
 					<div class="carousel-caption">
 						<h4>Population EU: approx. 502 M</h4>
 						<p>4% equals 20,080,000 people</p>
 					</div>
 				</div>
 				<div class="item">
-					<img src="carousel07.png" alt="">
+					<img src="carousel07.gif" alt="">
 					<div class="carousel-caption">
 						<h4>Canada, US and EU combined market: 34,040,000</h4>
 						<p>and no application to support...</p>
 					</div>
 				</div>
 				<div class="item">
-					<img src="carousel06.png" alt="">
+					<img src="carousel06.gif" alt="">
 					<div class="carousel-caption">
 						<h4>8 primary food allergens account for about 90% of reactions</h4>
 						<p>peanuts, milk, eggs, tree nuts, fish, shellfish, soy, wheat</p>
 					</div>
 				</div>
 				<div class="item">
-					<img src="carousel08.png" alt="">
+					<img src="carousel08.gif" alt="">
 					<div class="carousel-caption">
 						<h4>"The scope of the problem, particularly for young people, is a significant public health issue."</h4>
 						<p>source: en.wikipedia.org/wiki/Food_allergy</p>
 					</div>
 				</div>
 				<div class="item">
-					<img src="carousel09.png" alt="">
+					<img src="carousel09.gif" alt="">
 					<div class="carousel-caption">
 						<h4>Why has this not been addressed with an app?</h4>
 						<p>&nbsp;</p>
 					</div>
 				</div>
 				<div class="item">
-					<img src="carousel10.png" alt="">
+					<img src="carousel10.gif" alt="">
 					<div class="carousel-caption">
 						<h4>These numbers do not include pets.</h4>
 						<p>But they have allergic reactions too....</p>
 					</div>
 				</div>
 				<div class="item">
-					<img src="carousel11.png" alt="">
+					<img src="carousel11.gif" alt="">
 					<div class="carousel-caption">
 						<h4>Let's change this situation...together.</h4>
 						<p>...and simplify the lives of people with food allergies. Please back us to make a difference. Today.</p>
@@ -377,9 +368,16 @@
 					<a id="back-now-link" target="_blnk" href="back_now.html"><button class="btn btn-success btn-large" style="width:100%;">Back Now!</button></a>
 				</div>
 				<div class="span10 offset1 social">
-					<a id="twitter-link" target="_blank" href="https://twitter.com/AllergenAlarm" data-show-count="false" data-lang="en"><button class="btn btn-twitter"><i class="icon-twitter"></i> | follow</button></a>
-					<a id="fb-link" target="_blank" href="https://www.facebook.com/AllergenAlarm" data-send="false" data-width="450" data-show-faces="true" data-action="recommend"><button class="btn btn-facebook"><i class="icon-facebook"></i> | recommend</button></a>
-					<a id="google-plus-link" target="_blank" href="" data-show-count="false" data-lang="en"><button class="btn btn-google-plus"><i class="icon-google-plus"></i> | connect</button></a>
+					<!-- AddThis Button BEGIN -->
+					<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+						<a class="addthis_button_facebook"></a>
+						<a class="addthis_button_twitter"></a>
+						<a class="addthis_button_google_plusone_share"></a>
+						<a class="addthis_counter addthis_bubble_style"></a>
+					</div>
+					<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+					<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-520036e506af6e46"></script>
+					<!-- AddThis Button END -->
 				</div>
 			</div>
 		</div>
