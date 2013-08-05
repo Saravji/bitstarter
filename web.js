@@ -18,6 +18,7 @@ app.get(/^(.+)$/, function(request, response) {
 		case '.js':head='text/javascript';break;
 		case 'css':head='text/css';break;
 		case 'png':head='image/png';break;
+		case 'jpg':head='image/jpg';break;
 		case 'ico':head='image/x-icon';break;
 		case 'ogg':head='audio/ogg';break;
 		case 'ebm':head='video/webm';break;
