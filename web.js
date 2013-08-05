@@ -26,7 +26,7 @@ app.get(/^(.+)$/, function(request, response) {
 	}
 	response.contentType(head);
 	response.charset = 'utf-8';
-	answer = fs.readFileSync(htmlfile).toString();
+	answer = fs.readFileSync(htmlfile); //.toString()
 	response.end(answer);
 });
 
