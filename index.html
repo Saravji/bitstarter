@@ -7,28 +7,11 @@
 	<link type="text/css" rel="stylesheet" href="css/bootstrap-combined.no-icons.min.css">
 	<link type="text/css" rel="stylesheet" href="css/font-awesome.css">
 	<link type="text/css" rel="stylesheet" href="css/social-buttons.css">
-<!--	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
--->	<link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css">
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800" rel="stylesheet" type="text/css">
 	<script type="text/javascript">
-
-		// Add a script element as a child of the body
-		function downloadJSAtOnload() {
-			var element = document.createElement("script");
-			element.src = "js/jquery.min.js";
-			document.body.appendChild(element);
-			element.src = "js/bootstrap.min.js";
-			document.body.appendChild(element);
-		}
-
-		// Check for browser support of event handling capability
-		if (window.addEventListener)
-			window.addEventListener("load", downloadJSAtOnload, false);
-		else if (window.attachEvent)
-			window.attachEvent("onload", downloadJSAtOnload);
-		else window.onload = downloadJSAtOnload;
-
 
 		today=new Date()
 		var countDays = 0;
@@ -210,18 +193,21 @@
 				</button>
 				<a class="brand" href="#">Bitstarter</a>
 				<div class="nav-collapse collapse">
-					<ul class="nav">
+					<ul class="nav navbar-nav">
 						<li class="active"><a href="#">Home</a></li>
 						<li class><a href="#about">About</a></li>
 						<li class><a href="#contact">Contact</a></li>
 						<li class><a href="#backing">Backing</a></li>
 						<li class><a href="#faq">FAQ</a></li>
 						<li class="dropdown">
-							<a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+							<a id="drop1" href="#" class="dropdown-toggle" data-toggle="dropdown">
 								History 
 								<b class="caret"></b>
 							</a>
 							<ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" target="_blank" href="20130728.html">2013-07-28</a>
+								</li>
 								<li role="presentation">
 									<a role="menuitem" tabindex="-1" target="_blank" href="20130721.html">2013-07-21</a>
 								</li>

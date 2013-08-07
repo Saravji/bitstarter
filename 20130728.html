@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang = "en"  xmlns:fb="http://ogp.me/ns/fb#" >
+  <head>
+    <meta charset="utf-8">
+    <title>Allergen Alarm  ::  Crowd-Funding to kick it off</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link type="text/css" rel="stylesheet" href="css/bootstrap-combined.no-icons.min.css">
+	<link type="text/css" rel="stylesheet" href="css/font-awesome.css">
+	<link type="text/css" rel="stylesheet" href="css/social-buttons.css">
+<!--	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+-->	<link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800" rel="stylesheet" type="text/css">
+	<script type="text/javascript">
+
+		// Add a script element as a child of the body
+		function downloadJSAtOnload() {
+			var element = document.createElement("script");
+			element.src = "js/jquery.min.js";
+			document.body.appendChild(element);
+			element.src = "js/bootstrap.min.js";
+			document.body.appendChild(element);
+		}
+
+		// Check for browser support of event handling capability
+		if (window.addEventListener)
+			window.addEventListener("load", downloadJSAtOnload, false);
+		else if (window.attachEvent)
+			window.attachEvent("onload", downloadJSAtOnload);
+		else window.onload = downloadJSAtOnload;
+
+
+		today=new Date()
+		var countDays = 0;
+		var bidEndMonth = 9; //Month is 0-11 in JavaScript
+		var bidEndDay = 8;
+		var bidEndYear = 2013;
+		var bidEndDate=new Date(bidEndYear, bidEndMonth, bidEndDay) 
+		var one_day=1000*60*60*24
+		countDays = Math.ceil((bidEndDate.getTime()-today.getTime())/(one_day) )
+		if (countDays <0) { countDays = 0; };
+		var numBackers = 0;
+		var moneyRaised = 0;
+		var moneyNeeded = 65000;
+		var moneyRaisedString = moneyRaised.toString();
+		if (moneyRaisedString.length > 3) { 
+			moneyRaisedString = "$" + moneyRaisedString.substring(0, moneyRaisedString.length - 3) + "," + moneyRaisedString.substring(moneyRaisedString.length - 3, moneyRaisedString.length);
+		} else {
+			moneyRaisedString = "$" + moneyRaisedString;
+		};
+		var moneyNeededString = moneyNeeded.toString();
+		if (moneyNeededString.length > 3) { 
+			moneyNeededString = "$" + moneyNeededString.substring(0, moneyNeededString.length - 3) + "," + moneyNeededString.substring(moneyNeededString.length - 3, moneyNeededString.length);
+		} else {
+			moneyNeededString = "$" + moneyNeededString;
+		};
+		if (moneyRaised > moneyNeeded) {
+			var barSuccess = 100;
+		} else {
+			var barSuccess = Math.floor(100*moneyRaised/moneyNeeded);
+		};
+		var barWarning = 100 - barSuccess;
+		function SetBar() {
+			document.getElementById("barSuccess").style.width = barSuccess + "%";
+			document.getElementById("barWarning").style.width = barWarning + "%";
+		};
+	</script>
+
+	<style type="text/css">
+      
+		/*Large desktop */
+		@media (min-width: 980px) {
+			
+			body {
+				padding-top: 60px;
+			}
+			
+			.linediv-l {
+				border-right: 1px white solid;
+			}
+			
+			.linediv-r {
+				border-left: 1px white solid;
+			}
+		}
+		
+		/*Landscape phones and down */
+		@media (max-width: 480px) {
+			
+			.copy {
+				padding: 2.5% 10%;
+			}
+			
+			.linediv-l {
+				border-bottom: 1px white solid;
+			}
+			
+			.linediv-r {
+				border-top: 1px white solid;
+			}
+		}
+		
+		/* All form factors */
+		
+		/* Main body and headings */
+		
+		boby {
+			font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+			text-align: center;
+		}
+		
+		.heading, .subheading {
+			font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+			text-align: center;
+		}
+		
+		p.lead {
+			padding-top: 1.5%;
+			font-size: 24px;
+			line-height: 30px;
+		}
+		
+		p {
+			font-size: 18px;
+			line-height: 24px;
+		}
+		
+		/* Video pitch and action */
+		
+		.pitch {
+			padding: 2.5% 0%;
+		}
+		
+		.order {
+			padding: 2% 0%;
+		}
+		
+		.actions {
+			background-color: #343434;
+			padding: 3% 0%;
+		}
+		
+		.video, .thermometer, .order, .social, .statistics, .asset {
+			text-align: center;
+		}
+		
+		.item {
+			padding-left: 73px;
+		}
+		
+		.statistics h3, .statistics p {
+			color: white;
+		}
+		
+		/* Marketing Copy and Footer */
+		
+		.copy {
+			padding-top: 2.5%;
+			padding-bottom: 2.5%;
+			text-align: justify;
+		}
+		
+		.asset {
+			padding: 2.5% 0%;
+		}
+		
+		.footer {
+			color: #cccccc;
+			text-align: center;
+		}
+		
+		.footer p {
+			font-size: 11px;
+		}
+		
+		.footer a {
+			color: #ccccff;
+		}
+
+		div.addthis_toolbox {
+			width:180px;
+			margin: 0 auto;
+		}
+
+	</style>
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-42980527-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+
+	</script>
+	
+</head>
+<body>
+	<div id="fb-root"></div>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="brand" href="#">Bitstarter</a>
+				<div class="nav-collapse collapse">
+					<ul class="nav">
+						<li class="active"><a href="#">Home</a></li>
+						<li class><a href="#about">About</a></li>
+						<li class><a href="#contact">Contact</a></li>
+						<li class><a href="#backing">Backing</a></li>
+						<li class><a href="#faq">FAQ</a></li>
+						<li class="dropdown">
+							<a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+								History 
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" target="_blank" href="20130721.html">2013-07-21</a>
+								</li>
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" target="_blank" href="20130714.html">2013-07-14</a>
+								</li>
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" target="_blank" href="20130707.html">2013-07-07</a>
+								</li>
+								<li class="divider"></li>
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1">This site's version</a>
+								</li>
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1">on date YYYY-MM-DD</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="container">
+		<div class="row-fluid subheading">
+			<div class="span12">
+				<p class="lead">This site is being developed as part of a Coursera course. Details in FAQ</p>
+			</div>
+		</div>
+		<div class="row-fluid heading">
+			<div class="span12">
+				<h1>Allergen Alarm</h1>
+			</div>
+		</div>
+		<div class="row-fluid subheading">
+			<div class="span12">
+				<p class="lead">We simplify the lives of people with food allergies.</p>
+			</div>
+		</div>
+		<div id="carousel-example-generic" class="carousel slide">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+			</ol>
+
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner">
+				<div class="item active">
+					<img src="carousel01.gif" alt="">
+					
+					<div class="carousel-caption">
+						<h4>As many as 5% of infants less than 3 years have diagnosed food allergies</h4>
+						<p>source: en.wikipedia.org/wiki/Food_allergy</p>
+					</div>
+				</div>
+				<div class="item">
+					<img src="carousel02.gif" alt="">
+					<div class="carousel-caption">
+						<h4>As many as 3% - 4% of adults have diagnosed food allergies</h4>
+						<p>source: en.wikipedia.org/wiki/Food_allergy</p>
+					</div>
+				</div>
+				<div class="item">
+					<img src="carousel03.gif" alt="">
+					<div class="carousel-caption">
+						<h4>More than 20% of adults think they have food allergies</h4>
+						<p>source: www.foodallergens.info/Facts/How_Many.html</p>
+					</div>
+				</div>
+				<div class="item">
+					<img src="carousel04.gif" alt="">
+					<div class="carousel-caption">
+						<h4>Population US and Canada: approx. 349 M</h4>
+						<p>4% equals 13,960,000 people</p>
+					</div>
+				</div>
+				<div class="item">
+					<img src="carousel05.gif" alt="">
+					<div class="carousel-caption">
+						<h4>Population EU: approx. 502 M</h4>
+						<p>4% equals 20,080,000 people</p>
+					</div>
+				</div>
+				<div class="item">
+					<img src="carousel07.gif" alt="">
+					<div class="carousel-caption">
+						<h4>Canada, US and EU combined market: 34,040,000</h4>
+						<p>and no application to support...</p>
+					</div>
+				</div>
+				<div class="item">
+					<img src="carousel06.gif" alt="">
+					<div class="carousel-caption">
+						<h4>8 primary food allergens account for about 90% of reactions</h4>
+						<p>peanuts, milk, eggs, tree nuts, fish, shellfish, soy, wheat</p>
+					</div>
+				</div>
+				<div class="item">
+					<img src="carousel08.gif" alt="">
+					<div class="carousel-caption">
+						<h4>"The scope of the problem, particularly for young people, is a significant public health issue."</h4>
+						<p>source: en.wikipedia.org/wiki/Food_allergy</p>
+					</div>
+				</div>
+				<div class="item">
+					<img src="carousel09.gif" alt="">
+					<div class="carousel-caption">
+						<h4>Why has this not been addressed with an app?</h4>
+						<p>&nbsp;</p>
+					</div>
+				</div>
+				<div class="item">
+					<img src="carousel10.gif" alt="">
+					<div class="carousel-caption">
+						<h4>These numbers do not include pets.</h4>
+						<p>But they have allergic reactions too....</p>
+					</div>
+				</div>
+				<div class="item">
+					<img src="carousel11.gif" alt="">
+					<div class="carousel-caption">
+						<h4>Let's change this situation...together.</h4>
+						<p>...and simplify the lives of people with food allergies. Please back us to make a difference. Today.</p>
+					</div>
+				</div>
+
+			</div>
+
+			<!-- Controls -->
+			<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+				<span class="icon-prev"></span>
+			</a>
+			<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+				<span class="icon-next"></span>
+			</a>
+		</div>
+		<div class="row-fluid pitch">
+			<div class="span5 offset1 video">
+				<img class="img-polaroid" src="top.gif" width="480" height="300">
+			</div>
+			<div class="span5 actions">
+				<div class="span8 offset2">
+					<div class="statistics">
+						<div class="span4">
+							<div class="linediv-l">
+								<h3>0</h3>
+								<p>backers</p>
+							</div>
+						</div>
+						<div class="span4">
+							<div class="linediv-c">
+								<h3><script>document.write(moneyRaisedString);</script></h3>
+								<p>of <script>document.write(moneyNeededString);</script></p>
+							</div>
+						</div>
+						<div class="span4">
+							<div class="linediv-r">
+								<h3><script>document.write(countDays);</script></h3>
+								<p>days left</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="span10 offset1">
+					<div class="thermometer progress active">
+						<div id="barSuccess" class="bar bar-success"></div>
+						<div id="barWarning" class="bar bar-warning"></div>
+						<script>SetBar();</script>
+					</div>
+				</div>
+				<div class="span10 offset1 order">
+					<a id="back-now-link" target="_blnk" href="#backing"><button class="btn btn-success btn-large" style="width:100%;">Back Now!</button></a>
+				</div>
+				<div class="span10 offset1 social">
+					<!-- AddThis Button BEGIN -->
+					<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+						<a class="addthis_button_facebook_follow" addthis:userid="AllergenAlarm" fb:like:action="recommend" ></a>
+						<a class="addthis_button_twitter_follow" addthis:userid="AllergenAlarm" ></a>
+						<a class="addthis_button_google_follow" addthis:userid="113277559695631635124" g:plusone:annotation="none"></a>
+					</div>
+					<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+					<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-520036e506af6e46"></script>
+				</div>
+			</div>
+		</div>
+		<div class="row-fluid section1">
+			<div class="span5 offset1 asset">
+				<img class="img-polaroid" src="grocery.jpg">
+			</div>
+			<div class="span5 copy">
+				<p>
+					Allergen Alarm instantly tells you if products in the grocery store are safe for people with allergies. Just scan the bar-code and know the risk for you and your loved ones!
+				</p>
+			</div>
+		</div>
+		<div class="row-fluid section2">
+			<div class="span5 offset1 copy copy-right">
+				<p class="lead">
+					Three plans available:
+				</p>
+				<p>
+					<b>Free</b> - Scan a barcode and get a list of safe or not safe for the major allergenes.<br>
+					<b>Month to month subscription</b> - Create your personalized profile online and get an instant answer if the product is safe or not safe for you. Up to two allergene profiles. Advertisement-free.<br>
+					<b>Annual subscriptions</b> - Create personalized profile online for you and your family (up to 6 profiles dependant on subscription) and get instant answers if the product is safe for each family member. Advertisement-free.<br>
+				</p>
+			</div>
+			<div class="span5 asset">
+				<img class="img-polaroid" src="kids.jpg">
+			</div>
+		</div>
+		<div class="row-fluid section3">
+			<div class="span5 offset1 copy copy-right">
+				<p class="lead">
+					Credits:
+				</p>
+				<p>
+					<b>The idea</b> comes from observations in the grocery store: Folks trying to decipher the small print of ingredients and failing, asking other customers for help.<br>
+					There must be something better.<br>
+					<b>Observing</b> the restrictions looming allergenes puts on people simply is not acceptable.<br>
+					There must be something better, a <b>solution</b>.<br>
+					The idea: Allergen Alarm App.<br>
+					And for the record: No-one in my family has any allergies.
+				</p>
+			</div>
+			<div class="span5 asset">
+				<img class="img-polaroid" src="Allergy.jpg" width="480" height="300">
+			</div>
+		</div>
+		<div class="row-fluid section4">
+			<div class="span5 offset1 asset copy">
+				<img class="img-polaroid" src="crowd.jpg" width="480" height="300">
+			</div>
+			<div class="span5 copy">
+				<p class="lead">
+					Crowd funding .... what will the funds be used for?
+				</p>
+				<p>
+					<b>A start.</b> The funds will be used to support my family and me for six months (I will be taking six month sabbatical off work).<br>
+					During this time, a fully functional prototype will be built, and all what is necessary to transform this idea into a successfull application protecting it's users.
+				</p>
+			</div>
+		</div>
+		<a name="about"></a>
+		<div class="row-fluid subheading">
+			<div class="span12">
+				<p class="lead">About...</p>
+			</div>
+		</div>
+		<div class="row-fluid section5">
+			<div class="span10 offset1 copy">
+				<p class="lead">
+					...about me:
+				</p>
+				<p>
+					Not going to bore you with what papers I got so-and-so many years ago. What matters is who I am today, what I learned, what I know, what I believe, what I can do and where I want to go. Today and tomorrow.<br>
+					One of my educations is in CS. I experienced the dot.com bubble, the Y2K and Euro change-over project in IT Infrastructures at a major European bank. Moved to Canada in 2005, citizen since 2011.<br><br>
+					I believe in transparency, that is why I lay open what the backer's money is being used for. I believe that families should not have a disadvantage because they have "more heads", that is why there is a tier that costs the same for six or two or one.<br>
+					I know that I can put together a functioning prototype. It might not have all the detailed knowledge yet, but that is learnable. 
+				</p>
+				<p class="lead">
+					...about my partners:
+				</p>
+				<p>
+					First and formost, my longterm partner and team mate is my wife. As team, we have mastered many demanding situations, and then some! Statistically seen, the probability that we are still together and work together is neglectible to non-existent. Let me put it this way: The statistics are wrong.<br>
+					<a id="li-link-dirk" target="_blank" href="http://ca.linkedin.com/in/dirkbiesinger/"><button class="btn btn-linkedin"><i class="icon-linkedin"></i> | View Profile Dirk</button></a>&nbsp;&nbsp;<a id="li-link-mira" target="_blank" href="http://ca.linkedin.com/in/mirabiesinger/"><button class="btn btn-linkedin"><i class="icon-linkedin"></i> | View Profile Mira</button></a><br>
+				</p>
+				<p class="lead">
+					...about our philosophy, our approach?
+				</p>
+				<p>
+					We see this project as <b>bottom-up</b>. This means we supply the idea and the concept, the customers and consumers decide if this is a product that is worth having. It will be apparent through backing of the start and the feedback. What comes after the start and the prototype is done, this will need to be seen. It depends on many factors that are at this time not tangible enough.
+				</p>
+				<p class="lead">
+					...about value:
+				</p>
+				<p>
+					I believe it is worth it, the moment we can save one person from the implications of an allergic reaction because of overlooked food allergens. Additionally, if we can make the lives of only a few dozen people every day a little easier, it is worth it. What do you think? If you agree, please back us, follow us on twitter, recommend us on facebook.
+				</p>
+				<p class="lead">
+					...about future plans:
+				</p>
+				<p>
+					Our first step is to secure crowd-funding for "bottom-up" developing a prototype application around this idea. The second step is to develop this into a business. Future steps include extension of this idea also for pet food allergens.
+				</p>
+			</div>
+		</div>
+		<a name="contact"></a>
+		<div class="row-fluid subheading">
+			<div class="span12">
+				<p class="lead">Contact...</p>
+			</div>
+		</div>
+		<div class="row-fluid section5">
+			<div class="span10 offset1 copy">
+				<p class="lead">
+					We are on <a target="_blank" href="https://www.facebook.com/AllergenAlarm">Facebook</a>, <a target="_blank" href="https://twitter.com/AllergenAlarm">Twitter</a> and <a target="_blank" href="https://plus.google.com/113277559695631635124" rel="publisher">Google+</a>.
+				</p>
+			</div>
+		</div>
+		<div class="row-fluid faq">
+			<div class="span10 offset1">
+				<h3>Backing this project</h3><a name="backing"></a>
+				<div class="accordion" id="accordion2">
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#tierOne">
+								Backing Tier 1: 0.01 BTC (approx. $ 1.00)
+							</a>
+						</div>
+						<div id="tierOne" class="accordion-body collapse">
+							<div class="accordion-inner">
+								I want to support this idea and do not expect anything in return.<br>
+								<a class="coinbase-button"
+									data-button-style="custom-large"
+									data-button-text="Back it with 0.01 Bitcoin"
+									data-code="b08444d835df8102a533bc785b2363c9"
+									href="https://coinbase.com/checkouts/b08444d835df8102a533bc785b2363c9">
+									Back it with 0.01</a>
+									<script src="https://coinbase.com/assets/button.js" type="text/javascript"></script>
+							</div>
+						</div>
+					</div>
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#tierTwo">
+								Backing Tier 2: 0.05 BTC (approx. $ 5.00)
+							</a>
+						</div>
+						<div id="tierTwo" class="accordion-body collapse">
+							<div class="accordion-inner">
+								I want to support this idea more and still do not expect anything in return.<br>
+								<a class="coinbase-button"
+									data-code="c9ef04158026a8ca066622d5e832ee5a"
+									data-button-style="custom-large"
+									data-button-text="Back it with 0.05 Bitcoin"
+									href="https://coinbase.com/checkouts/c9ef04158026a8ca066622d5e832ee5a">
+									Back it with 0.05</a>
+									<script src="https://coinbase.com/assets/button.js" type="text/javascript"></script>
+							</div>
+						</div>
+					</div>
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#tierThree">
+								Backing Tier 3: 0.20 BTC (approx. $ 20.00)
+							</a>
+						</div>
+						<div id="tierThree" class="accordion-body collapse">
+							<div class="accordion-inner">
+								I want to support this idea and will get three months of month-to-month-subscription during the prototype test phase.<br>
+								<a class="coinbase-button"
+									data-code="f70aaebb912218cfb9269deac502d89c"
+									data-button-style="custom-large"
+									data-button-text="Back it with 0.20 Bitcoin"
+									href="https://coinbase.com/checkouts/f70aaebb912218cfb9269deac502d89c">
+									Back it with 0.20</a>
+									<script src="https://coinbase.com/assets/button.js" type="text/javascript"></script>
+							</div>
+						</div>
+					</div>
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#tierFour">
+								Backing Tier 4: 0.40 BTC (approx. $ 40.00)
+							</a>
+						</div>
+						<div id="tierFour" class="accordion-body collapse">
+							<div class="accordion-inner">
+								I want to support this idea and will get one of the first annual subscriptions during the prototype test phase. If I wish so, my name will be published on the webpage as an early backer.<br>
+								<a class="coinbase-button"
+									data-code="1ff43ab3fb5e3a1a661e581691141961"
+									data-button-style="custom-large"
+									data-button-text="Back it with 0.40 Bitcoin"
+									href="https://coinbase.com/checkouts/1ff43ab3fb5e3a1a661e581691141961">
+									Back it with 0.40</a>
+									<script src="https://coinbase.com/assets/button.js" type="text/javascript"></script>
+							</div>
+						</div>
+					</div>
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#tierFive">
+								Backing Tier 5: 0.75 BTC (approx. $ 75.00)
+							</a>
+						</div>
+						<div id="tierFive" class="accordion-body collapse">
+							<div class="accordion-inner">
+								I want to support this idea and will get one of the first annual subscriptions during the prototype test phase. I will also be included in the new feature test phases. If I wish so, my name will be published on the webpage as an early backer.<br>
+								<a class="coinbase-button"
+									data-code="39cda3b1b345a21a7993bf6c8d826fc2"
+									data-button-style="custom-large"
+									data-button-text="Back it with 0.75 Bitcoin"
+									href="https://coinbase.com/checkouts/39cda3b1b345a21a7993bf6c8d826fc2">
+									Back it with 0.75</a>
+									<script src="https://coinbase.com/assets/button.js" type="text/javascript"></script>
+							</div>
+						</div>
+					</div>
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#tierSix">
+								Backing Tier 6: 1.50 BTC (approx. $ 150.00)
+							</a>
+						</div>
+						<div id="tierSix" class="accordion-body collapse">
+							<div class="accordion-inner">
+								I want to support this idea and will get one of the first annual subscriptions valid for two years. If I wish so, my name will be published on the webpage as an early backer.<br>
+								<a class="coinbase-button"
+									data-code="97169859a7b0c6e37ea961b4478de4f6"
+									data-button-style="custom-large"
+									data-button-text="Back it with 1.50 Bitcoin"
+									href="https://coinbase.com/checkouts/97169859a7b0c6e37ea961b4478de4f6">
+									Back it with 1.50</a>
+									<script src="https://coinbase.com/assets/button.js" type="text/javascript"></script>
+							</div>
+						</div>
+					</div>
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#tierSeven">
+								Backing Tier 7: 5.00 BTC (approx. $ 500.00)
+							</a>
+						</div>
+						<div id="tierSeven" class="accordion-body collapse">
+							<div class="accordion-inner">
+								Great idea! Do it! I support this idea and you! I will get one of the first annual subscriptions valid for three years. If I wish so, my name will be published on the webpage as an early backer.<br>
+								<a class="coinbase-button"
+									data-code="2854f4f7d46a26484d5cb06e4c6fb067"
+									data-button-style="custom-large"
+									data-button-text="Back it with 5.00 Bitcoin"
+									href="https://coinbase.com/checkouts/2854f4f7d46a26484d5cb06e4c6fb067">
+									Back it with 5.00</a>
+									<script src="https://coinbase.com/assets/button.js" type="text/javascript"></script>
+							</div>
+						</div>
+					</div>
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#tierEight">
+								Backing Tier 8: 10.00 BTC (approx. $ 1,000.00)
+							</a>
+						</div>
+						<div id="tierEight" class="accordion-body collapse">
+							<div class="accordion-inner">
+								Top Backers will be named, if they wish, prominently on our backers webpage with a personal message. They also receive one of the first annual subscriptions valid for three years.<br>
+								<a class="coinbase-button"
+									data-code="f92612356181e7b9f273464a81151366"
+									data-button-style="custom-large"
+									data-button-text="Back it with 10.00 Bitcoin"
+									href="https://coinbase.com/checkouts/f92612356181e7b9f273464a81151366">
+									Back it with 10.00</a>
+									<script src="https://coinbase.com/assets/button.js" type="text/javascript"></script>
+							</div>
+						</div>
+					</div>
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#tierNine">
+								Backing Tier 9: 100.00 BTC (approx. $ 10,000.00)
+							</a>
+						</div>
+						<div id="tierNine" class="accordion-body collapse">
+							<div class="accordion-inner">
+								Ultimate Backers will be named, if they wish, prominently on our backers webpage with a personal message. They also receive one of the first annual subscriptions valid for three years.<br>
+								<a class="coinbase-button"
+									data-code="cc43050a8d099c4fa546b04bd57f4e22"
+									data-button-style="custom-large"
+									data-button-text="Back it with 100.00 Bitcoin"
+									href="https://coinbase.com/checkouts/cc43050a8d099c4fa546b04bd57f4e22">
+									Back it with 100.00</a>
+									<script src="https://coinbase.com/assets/button.js" type="text/javascript"></script>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row-fluid faq">
+			<div class="span10 offset1">
+				<h3>FAQ</h3><a name="faq"></a>
+				<div class="accordion" id="accordion2">
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+								Is this site for real?
+							</a>
+						</div>
+						<div id="collapseOne" class="accordion-body collapse">
+							<div class="accordion-inner">
+								Yep. This site is developed as part of the assignments and homework during the Coursera course "Startup Engineering" 2013-06-17 to 2013-09-08. Find the course info <a target="_blank" href="https://www.coursera.org/course/startup">here</a>.
+							</div>
+						</div>
+					</div>
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+								Why the history section?
+							</a>
+						</div>
+						<div id="collapseTwo" class="accordion-body collapse">
+							<div class="accordion-inner">
+								The history section shows the development of this site over the time of the course.
+							</div>
+						</div>
+					</div>
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+								Where can I find Bitcoin Exchange information?
+							</a>
+						</div>
+						<div id="collapseThree" class="accordion-body collapse">
+							<div class="accordion-inner">
+								One source for all major currencies is: <a target="_blank" href="http://bitcoinity.org/markets">bitcoinity.org/markets</a>.
+							</div>
+						</div>
+					</div>
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
+								Where can I buy Bitcoins?
+							</a>
+						</div>
+						<div id="collapseFour" class="accordion-body collapse">
+							<div class="accordion-inner">
+								One source that links to many ways to buy bitcoins: <a target="_blank" href="http://www.buybitcoinswiki.com/how-to-buy-bitcoins/">www.buybitcoinswiki.com/how-to-buy-bitcoins/</a>.<br>
+								Another one: <a target="_blank" href="http://howtobuybitcoins.info/">howtobuybitcoins.info/</a>
+							</div>
+						</div>
+					</div>
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive">
+								Will my name be published if I back this project?
+							</a>
+						</div>
+						<div id="collapseFive" class="accordion-body collapse">
+							<div class="accordion-inner">
+								Not by default! If you back (Tier 4 and up) and wish that your name is published as demonstration of your early support for this project, please tell us this. We chose this way to protect the privacy of all that do not want to have their names published. Adding somebody to the published list is easily done. Re-instating the privacy of somebody that did not wish to be named publicly is impossible.
+							</div>
+						</div>
+					</div>
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSix">
+								What is the risk?
+							</a>
+						</div>
+						<div id="collapseSix" class="accordion-body collapse">
+							<div class="accordion-inner">
+								Plainly put: Worst case is you back this project and it does not go anywhere.<br>
+								<b>A risk is worth taking if you can live with the worst possible outcome.</b><br>
+								Our intention is to produce a fully functional prototype (that can be optimized) and that probably will need some adjustments for the case that the subscriber base gets big. <br>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row-fluid footer">
+			<div class="span12">
+				<p>
+					© 2013 greenfeet.ca. All rights reserved.
+				</p>
+			</div>
+		</div>
+	</div>
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-42980527-1', 'herokuapp.com');
+		ga('send', 'pageview');
+	</script>
+</body>
+</html>
